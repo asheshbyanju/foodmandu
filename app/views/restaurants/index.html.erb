@@ -1,0 +1,85 @@
+<! DOCTYPE html>
+<html>
+
+<div class="container">
+	<head>
+	<title>"Restaurant" %></title>
+	<h3>Member Restaurant</h3>
+	<p>Find restaurants of your choice from the list below and click 'Place Order' to continue.</p>
+	<a><%= link_to("Add New Restaurant", new_restaurant_path, :class => 'action new') %></a>
+	</head>
+</div>
+
+<!-- <div class="table-responsive">
+<table class="table">
+<thead>
+	<tr>
+		<th>SN</th>
+		<th>Name</th>
+		<th>location</th>
+		<th>cuisine</th>
+		<th>service charge</th>
+		<th>Vat</th>
+		<th>contact</th>
+	</tr>
+</thead>
+<tbody>
+	<% @restaurants.each do |r| %>
+	<tr>
+		<td><%= r.id %></td>
+		<td><%= r.name %></td>
+		<td><%= r.location %> </td>
+		<td><%= r.cuisine %> </td>
+		<td><%= r.service_charge %></td>
+		<td><%= r.vat %></td>
+		<td><%= r.contact %></td>
+	</tr>
+	<% end%>
+
+	</tbody>
+
+</table>
+</div>
+ -->
+	<div class="container">
+	  <div class="row">
+	  	<div class="col-sm-9">
+				<% @restaurants.each do |r| %>
+			    <div class="col-sm-3">
+			      <h3><%= link_to("#{r.name}", restaurant_path(r), :class => 'action show') %></h3>
+			      <p><%= "located in #{r.location}" %></p>
+			      <a><%= "cuisine: #{r.cuisine}" %></a>
+			      <a><%= link_to("Show", restaurant_path(r), :class => 'action show') %></a>
+				<a><%= link_to("Edit", edit_restaurant_path(r), :class => 'action edit') if policy(r).update? %></a>
+				<a><%= link_to("Delete", delete_restaurant_path(r), :class => 'action delete') if policy(r).delete?  %></a>
+			    </div>
+				<% end %>
+		   </div>
+	  </div>
+
+	  
+	  	
+
+	  
+	</div>
+
+<!-- </div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h3></h3>
+			<p> </p>
+		</div>
+
+		<div class="col-sm-4">
+		</div>
+	</div>
+</div> -->
+
+		
+<!-- before yield -->
+
+<!-- after yield -->
+
+</html>

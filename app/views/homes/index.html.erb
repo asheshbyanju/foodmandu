@@ -1,0 +1,76 @@
+<! DOCTYPE html>
+<html>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+	<head>
+	<title>"Foodmandu" %></title>
+	<h1>Foodmandu</h1>
+	</head>
+	</div>
+</div>
+
+<div class="container">
+	<%= link_to(image_tag("foodmandu.jpg", width: '800px', height: '400px'), 'https://www.facebook.com' )%>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h3>Recently Added Member</h3>
+
+			<p> </p>
+		</div>
+
+
+		<div class="col-sm-4">
+			<h3> asdasd</h3>
+	
+		</div>
+
+		<div class="col-sm-4">
+		</div>
+	</div>
+		<div class="container">
+	  <div class="row">
+	  	<div class="col-sm-12">
+				
+
+				<% @restaurants.each do |r| %>
+			    <div class="col-sm-4">
+			    <div class="col-sm-4">
+			     <%= link_to(image_tag("bota.jpg", width: '100px', height: '100px'), restaurant_path(r)) %>
+			     </div>
+			     <div class="col-sm-3">
+			      <a><%= link_to("#{r.name}", restaurant_path(r), :class => 'action show') %></a>
+			      <a><%= "#{r.location}" %></a>
+			      <a><%= "#{r.cuisine}" %></a>
+			      <a><%= link_to("Show", restaurant_path(r), :class => 'action show') %></a>
+				<a><%= link_to("Edit", edit_restaurant_path(r), :class => 'action edit') if policy(r).update? %></a>
+				<a><%= link_to("Delete", delete_restaurant_path(r), :class => 'action delete') if policy(r).delete?  %></a>
+				</div>
+			    </div>
+				<% end %>
+		   </div>
+	  </div>
+
+	  
+	  	
+
+	  
+	</div>
+</div>
+		
+
+
+
+
+	
+</div>
+
+<!-- before yield -->
+
+<!-- after yield -->
+
+</html>

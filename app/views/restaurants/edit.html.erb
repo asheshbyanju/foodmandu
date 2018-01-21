@@ -1,0 +1,21 @@
+<!-- <h1>Subjects#edit</h1>
+<p>Find me in app/views/subjects/edit.html.erb</p>
+ -->
+ <%= link_to('<< Back to List', restaurants_path, :class => 'back-link') %>
+
+ <div class="Restaurant edit">
+ 	<h2>Update Restaurant</h2>
+
+<%= form_for(@restaurant) do |f| %>
+
+<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+</table>
+
+<div class="form button">
+	<%= f.submit("Update Restaurant") %>
+</div>
+
+	 <% end%>
+</div>
+

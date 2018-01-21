@@ -1,0 +1,16 @@
+<%= link_to('<< Back to List', restaurants_path, :class => 'back-link') %>
+
+ <div class="restaurant new">
+ 	<h2>Add A New Restaurant</h2>
+
+<%= form_for(@restaurant) do |f| %>
+
+<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+<div class="form button">
+	<%= f.submit("Add Restaurant") %>
+</div>
+
+	 <% end%>
+</div>
+ 
